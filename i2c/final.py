@@ -37,121 +37,19 @@ bus = smbus.SMBus(1)
 
 # This is the address we setup in the Arduino Program
 #Slave Address 1
-#address = 0x04
+address = 0x04
 
 #Slave Address 2
-address = 0x05
+#address2 = 0x05
 
 #slave address 3
-#address = 0x06
+#address3 = 0x06
 
 def on_connect(client, userdata, flags, rc):
   print("Connected with result code "+str(rc))
   client.subscribe("pi")
 
-
-
-
-def writeNumber(value):
-    print(value)
-    bus.write_byte(address, value)
     
-    if value == 97:
-       bus.write_byte(address, value)
-       
-    elif value == 98: 
-       bus.write_byte(address, value)
-       
-    elif value == 99:
-       bus.write_byte(address, value)
-
-    elif value == 100: 
-       bus.write_byte(address, value)
-       
-    elif value == 101:
-       bus.write_byte(address, value)
-
-    elif value == 102: 
-       bus.write_byte(address, value)
-       
-    elif value == 103:
-       bus.write_byte(address, value)
-
-    elif value == 104: 
-       bus.write_byte(address, value)
-       
-    elif value == 105:
-       bus.write_byte(address, value)   
-
-    elif value == 106: 
-       bus.write_byte(address, value)
-       
-    elif value == 107:
-       bus.write_byte(address, value)
-
-    elif value == 108: 
-       bus.write_byte(address, value)
-       
-    elif value == 109:
-       bus.write_byte(address, value)
-
-    elif value == 110: 
-       bus.write_byte(address, value)
-       
-    elif value == 111:
-       bus.write_byte(address, value)
-
-    elif value == 112: 
-       bus.write_byte(address, value)
-       
-    elif value == 113:
-       bus.write_byte(address, value)
-
-    elif value == 114: 
-       bus.write_byte(address, value)
-       
-    elif value == 115:
-       bus.write_byte(address, value)
-
-    elif value == 116: 
-       bus.write_byte(address, value)
-       
-    elif value == 117:
-       bus.write_byte(address, value)
-       
-    elif value == 118:
-       bus.write_byte(address, value)
-       
-    elif value == 119: 
-       bus.write_byte(address, value)
-       
-    elif value == 120:
-       bus.write_byte(address, value)
-
-    elif value == 121: 
-       bus.read_byte(address, value)
-       
-    elif value == 122:
-       bus.write_byte(address_2, value)   
-
-    elif value == 65:
-       bus.write_byte(address_3, value)   
-        
-    elif value == 66: 
-       bus.write_byte(address_3, value)
-       
-    elif value == 67:
-       bus.write_byte(address_3, value)   
-        
-    elif value == 68: 
-       bus.write_byte(address_3, value)
-       
-    elif value == 69:
-       bus.write_byte(address_3, value) 
-
-    # bus.write_byte_data(address, 0, value)
-    return -1
-        
 def on_message(client, userdata, msg):
   if msg.payload.decode() == "39":
     value = 97 
@@ -458,7 +356,7 @@ def on_message(client, userdata, msg):
 
 
     
-  print(msg.payload.decode())
+  print(" "+msg.payload.decode())
   print("  ")
 
 def get_float(data, index):
