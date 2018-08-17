@@ -20,7 +20,7 @@
 #define IRpin          2
  
 // the maximum pulse we'll listen for - 65 milliseconds is a long time
-#define MAXPULSE 60000
+#define MAXPULSE 65000
  
 // what our timing resolution should be, larger is better
 // as its more 'precise' - but too large and you wont get
@@ -79,7 +79,8 @@ void loop(void) {
 }
  
 void printpulses(void) {
-  Serial.println("\n\r\n\rReceived: \n\rOFF \tON");
+  Serial.println("\n\r\n\rdelay(1000);");
+  Serial.println("Serial.println(\"0ne\");");
   for (uint8_t i = 0; i < currentpulse; i++) {
     Serial.print("delayMicroseconds(");
     Serial.print(pulses[i][0] * RESOLUTION, DEC);

@@ -7,7 +7,7 @@
 #include <Wire.h>
 //Slave Address for the Communication
 #define SLAVE_ADDRESS 0x05
-
+/////////////////////////////Air Conditioner Functions///////////////////////////////
 void ACon();
 void ACoff();
 void temp27();
@@ -18,8 +18,24 @@ void temp23();
 void temp22();
 void temp21();
 void temp20();
-
-
+/////////////////////////////TV Functions///////////////////////////////
+void TVOnOff();
+void TVMute();
+void TVChannelUp();
+void TVChannelDown();
+void TVVolumeUp();
+void TVVolumeDown();
+void Channel0();
+void Channel1();
+void Channel2();
+void Channel3();
+void Channel4();
+void Channel5();
+void Channel6();
+void Channel7();
+void Channel8();
+void Channel9();
+////////////////////////////////////////////////////////////////////////
 int IRledPin =  13;    // LED connected to digital pin 13
 char number[50];
 int temperature = 10;
@@ -40,7 +56,7 @@ void setup()   {
 void loop()
 {
   ReadTempOuter();
-  
+
   switch (Serial.parseInt()) {
     case 1:
       ACon();//////////on
@@ -58,10 +74,10 @@ void loop()
       temp25();
       break;
     case 6:
-      temp24();
+      //temp24();
       break;
     case 7:
-      temp23();
+      //temp23();
       break;
     case 8:
       temp22();
@@ -71,6 +87,55 @@ void loop()
       break;
     case 10:
       temp20();
+      break;
+/////////////////////////////////////////////////////////////////////
+    case 11:
+      TVOnOff();
+      break;
+    case 12:////////////////////////mute
+      TVMute();
+      break;
+    case 13:
+      TVChannelUp();
+      break;
+    case 14:
+      TVChannelDown();
+      break;
+    case 15:
+      TVVolumeUp();
+      break;
+    case 16:
+      TVVolumeDown();
+      break;
+    case 17:
+      Channel0();
+      break;
+    case 18:
+      Channel1();
+      break;
+    case 19:
+      Channel2();
+      break;
+    case 20:
+      Channel3();
+      break;
+    case 21:
+      Channel4();
+      break;
+    case 22:
+      Channel5();
+      break;
+    case 23:
+      Channel6();
+      break;
+    case 24:
+      Channel7();
+      break;
+    case 25:
+      Channel8();
+      break;
+    case 26:
+      Channel9();
       break;
   }
 }
@@ -1196,6 +1261,690 @@ void temp20() {
 }
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+/////////////////////////////////////////////////////////////////////////TV/////////////////////////////////////////////////////////////////////////////
+void TVOnOff() {
+  delayMicroseconds(13696); pulseiR(9360);
+  delayMicroseconds(4540); pulseiR(660);
+  delayMicroseconds(500); pulseiR(640);
+  delayMicroseconds(500); pulseiR(660);
+  delayMicroseconds(500); pulseiR(660);
+  delayMicroseconds(500); pulseiR(640);
+  delayMicroseconds(500); pulseiR(660);
+  delayMicroseconds(500); pulseiR(660);
+  delayMicroseconds(500); pulseiR(640);
+  delayMicroseconds(500); pulseiR(660);
+  delayMicroseconds(1680); pulseiR(620);
+  delayMicroseconds(1680); pulseiR(640);
+  delayMicroseconds(1660); pulseiR(660);
+  delayMicroseconds(1660); pulseiR(640);
+  delayMicroseconds(1660); pulseiR(660);
+  delayMicroseconds(1640); pulseiR(660);
+  delayMicroseconds(1680); pulseiR(600);
+  delayMicroseconds(1700); pulseiR(660);
+  delayMicroseconds(500); pulseiR(600);
+  delayMicroseconds(540); pulseiR(620);
+  delayMicroseconds(1700); pulseiR(600);
+  delayMicroseconds(1700); pulseiR(660);
+  delayMicroseconds(1640); pulseiR(640);
+  delayMicroseconds(520); pulseiR(660);
+  delayMicroseconds(520); pulseiR(600);
+  delayMicroseconds(520); pulseiR(640);
+  delayMicroseconds(1700); pulseiR(600);
+  delayMicroseconds(1700); pulseiR(660);
+  delayMicroseconds(500); pulseiR(600);
+  delayMicroseconds(540); pulseiR(640);
+  delayMicroseconds(520); pulseiR(660);
+  delayMicroseconds(1640); pulseiR(620);
+  delayMicroseconds(1700); pulseiR(620);
+  delayMicroseconds(1680); pulseiR(660);
+  delayMicroseconds(40960); pulseiR(9360);
+  delayMicroseconds(2240); pulseiR(600);
+}
+
+
+void TVMute() {
+  delayMicroseconds(46408); pulseiR(9320);
+delayMicroseconds(4580); pulseiR(620);
+delayMicroseconds(540); pulseiR(620);
+delayMicroseconds(540); pulseiR(600);
+delayMicroseconds(540); pulseiR(620);
+delayMicroseconds(540); pulseiR(620);
+delayMicroseconds(540); pulseiR(600);
+delayMicroseconds(540); pulseiR(620);
+delayMicroseconds(540); pulseiR(620);
+delayMicroseconds(540); pulseiR(600);
+delayMicroseconds(1700); pulseiR(620);
+delayMicroseconds(1680); pulseiR(620);
+delayMicroseconds(1720); pulseiR(600);
+delayMicroseconds(1680); pulseiR(640);
+delayMicroseconds(1660); pulseiR(640);
+delayMicroseconds(1700); pulseiR(600);
+delayMicroseconds(1700); pulseiR(620);
+delayMicroseconds(1680); pulseiR(640);
+delayMicroseconds(520); pulseiR(640);
+delayMicroseconds(520); pulseiR(620);
+delayMicroseconds(1680); pulseiR(640);
+delayMicroseconds(540); pulseiR(600);
+delayMicroseconds(1700); pulseiR(620);
+delayMicroseconds(540); pulseiR(600);
+delayMicroseconds(540); pulseiR(620);
+delayMicroseconds(540); pulseiR(620);
+delayMicroseconds(1680); pulseiR(640);
+delayMicroseconds(1680); pulseiR(640);
+delayMicroseconds(500); pulseiR(640);
+delayMicroseconds(1680); pulseiR(620);
+delayMicroseconds(520); pulseiR(620);
+delayMicroseconds(1720); pulseiR(620);
+delayMicroseconds(1680); pulseiR(620);
+delayMicroseconds(1680); pulseiR(640);
+delayMicroseconds(40980); pulseiR(9320);
+delayMicroseconds(2260); pulseiR(640);
+
+}
+
+
+
+void TVChannelUp() {
+  delayMicroseconds(39628); pulseiR(9340);
+  delayMicroseconds(4540); pulseiR(660);
+  delayMicroseconds(540); pulseiR(600);
+  delayMicroseconds(520); pulseiR(640);
+  delayMicroseconds(520); pulseiR(640);
+  delayMicroseconds(520); pulseiR(620);
+  delayMicroseconds(520); pulseiR(640);
+  delayMicroseconds(520); pulseiR(640);
+  delayMicroseconds(540); pulseiR(600);
+  delayMicroseconds(520); pulseiR(640);
+  delayMicroseconds(1700); pulseiR(600);
+  delayMicroseconds(1700); pulseiR(620);
+  delayMicroseconds(1680); pulseiR(620);
+  delayMicroseconds(1700); pulseiR(600);
+  delayMicroseconds(1700); pulseiR(640);
+  delayMicroseconds(1680); pulseiR(620);
+  delayMicroseconds(1700); pulseiR(600);
+  delayMicroseconds(1700); pulseiR(620);
+  delayMicroseconds(1680); pulseiR(640);
+  delayMicroseconds(1680); pulseiR(600);
+  delayMicroseconds(540); pulseiR(640);
+  delayMicroseconds(520); pulseiR(640);
+  delayMicroseconds(540); pulseiR(600);
+  delayMicroseconds(520); pulseiR(640);
+  delayMicroseconds(520); pulseiR(640);
+  delayMicroseconds(520); pulseiR(620);
+  delayMicroseconds(520); pulseiR(640);
+  delayMicroseconds(520); pulseiR(640);
+  delayMicroseconds(1660); pulseiR(640);
+  delayMicroseconds(1700); pulseiR(600);
+  delayMicroseconds(1700); pulseiR(620);
+  delayMicroseconds(1680); pulseiR(640);
+  delayMicroseconds(1680); pulseiR(620);
+  delayMicroseconds(1680); pulseiR(640);
+  delayMicroseconds(40980); pulseiR(9340);
+  delayMicroseconds(2260); pulseiR(600);
+}
+
+
+void TVChannelDown() {
+delayMicroseconds(39640); pulseiR(9340);
+delayMicroseconds(4560); pulseiR(640);
+delayMicroseconds(540); pulseiR(600);
+delayMicroseconds(540); pulseiR(620);
+delayMicroseconds(540); pulseiR(620);
+delayMicroseconds(540); pulseiR(600);
+delayMicroseconds(540); pulseiR(620);
+delayMicroseconds(520); pulseiR(640);
+delayMicroseconds(540); pulseiR(600);
+delayMicroseconds(520); pulseiR(640);
+delayMicroseconds(1700); pulseiR(600);
+delayMicroseconds(1700); pulseiR(620);
+delayMicroseconds(1680); pulseiR(620);
+delayMicroseconds(1700); pulseiR(620);
+delayMicroseconds(1680); pulseiR(640);
+delayMicroseconds(1680); pulseiR(620);
+delayMicroseconds(1680); pulseiR(620);
+delayMicroseconds(1700); pulseiR(640);
+delayMicroseconds(520); pulseiR(600);
+delayMicroseconds(1700); pulseiR(640);
+delayMicroseconds(520); pulseiR(620);
+delayMicroseconds(520); pulseiR(640);
+delayMicroseconds(520); pulseiR(640);
+delayMicroseconds(520); pulseiR(600);
+delayMicroseconds(540); pulseiR(640);
+delayMicroseconds(520); pulseiR(640);
+delayMicroseconds(1680); pulseiR(620);
+delayMicroseconds(540); pulseiR(620);
+delayMicroseconds(1680); pulseiR(620);
+delayMicroseconds(1700); pulseiR(600);
+delayMicroseconds(1700); pulseiR(620);
+delayMicroseconds(1680); pulseiR(640);
+delayMicroseconds(1700); pulseiR(600);
+delayMicroseconds(1680); pulseiR(640);
+delayMicroseconds(40980); pulseiR(9340);
+delayMicroseconds(2260); pulseiR(620);
+delayMicroseconds(33284); pulseiR(9340);
+delayMicroseconds(2260); pulseiR(640);
+delayMicroseconds(33264); pulseiR(9340);
+delayMicroseconds(2260); pulseiR(640);
+delayMicroseconds(33264); pulseiR(9360);
+delayMicroseconds(2240); pulseiR(600);
+
+}
+
+
+void TVVolumeUp() {
+delayMicroseconds(37260); pulseiR(9300);
+delayMicroseconds(4600); pulseiR(600);
+delayMicroseconds(540); pulseiR(620);
+delayMicroseconds(540); pulseiR(660);
+delayMicroseconds(500); pulseiR(600);
+delayMicroseconds(540); pulseiR(620);
+delayMicroseconds(540); pulseiR(660);
+delayMicroseconds(500); pulseiR(600);
+delayMicroseconds(540); pulseiR(620);
+delayMicroseconds(540); pulseiR(660);
+delayMicroseconds(1640); pulseiR(620);
+delayMicroseconds(1700); pulseiR(600);
+delayMicroseconds(1700); pulseiR(660);
+delayMicroseconds(1640); pulseiR(640);
+delayMicroseconds(1700); pulseiR(600);
+delayMicroseconds(1700); pulseiR(660);
+delayMicroseconds(1640); pulseiR(620);
+delayMicroseconds(1700); pulseiR(620);
+delayMicroseconds(520); pulseiR(640);
+delayMicroseconds(1700); pulseiR(600);
+delayMicroseconds(520); pulseiR(640);
+delayMicroseconds(1700); pulseiR(600);
+delayMicroseconds(1700); pulseiR(660);
+delayMicroseconds(500); pulseiR(600);
+delayMicroseconds(540); pulseiR(620);
+delayMicroseconds(540); pulseiR(660);
+delayMicroseconds(1640); pulseiR(620);
+delayMicroseconds(540); pulseiR(660);
+delayMicroseconds(1640); pulseiR(640);
+delayMicroseconds(520); pulseiR(660);
+delayMicroseconds(500); pulseiR(620);
+delayMicroseconds(1680); pulseiR(660);
+delayMicroseconds(1640); pulseiR(640);
+delayMicroseconds(1700); pulseiR(600);
+
+
+
+}
+
+
+void TVVolumeDown() {
+delayMicroseconds(20572); pulseiR(9340);
+delayMicroseconds(4540); pulseiR(660);
+delayMicroseconds(540); pulseiR(620);
+delayMicroseconds(500); pulseiR(660);
+delayMicroseconds(520); pulseiR(620);
+delayMicroseconds(540); pulseiR(620);
+delayMicroseconds(520); pulseiR(640);
+delayMicroseconds(500); pulseiR(640);
+delayMicroseconds(540); pulseiR(620);
+delayMicroseconds(500); pulseiR(660);
+delayMicroseconds(1680); pulseiR(620);
+delayMicroseconds(1680); pulseiR(620);
+delayMicroseconds(1680); pulseiR(660);
+delayMicroseconds(1660); pulseiR(640);
+delayMicroseconds(1660); pulseiR(640);
+delayMicroseconds(1680); pulseiR(640);
+delayMicroseconds(1680); pulseiR(620);
+delayMicroseconds(1680); pulseiR(620);
+delayMicroseconds(540); pulseiR(620);
+delayMicroseconds(1680); pulseiR(640);
+delayMicroseconds(1660); pulseiR(660);
+delayMicroseconds(1680); pulseiR(620);
+delayMicroseconds(520); pulseiR(640);
+delayMicroseconds(520); pulseiR(620);
+delayMicroseconds(540); pulseiR(620);
+delayMicroseconds(520); pulseiR(640);
+delayMicroseconds(1680); pulseiR(620);
+delayMicroseconds(520); pulseiR(640);
+delayMicroseconds(520); pulseiR(620);
+delayMicroseconds(540); pulseiR(620);
+delayMicroseconds(1680); pulseiR(620);
+delayMicroseconds(1680); pulseiR(660);
+delayMicroseconds(1680); pulseiR(620);
+delayMicroseconds(1660); pulseiR(640);
+
+}
+
+
+void Channel0() {
+
+delayMicroseconds(32436); pulseiR(9320);
+delayMicroseconds(4560); pulseiR(660);
+delayMicroseconds(500); pulseiR(660);
+delayMicroseconds(500); pulseiR(660);
+delayMicroseconds(500); pulseiR(640);
+delayMicroseconds(500); pulseiR(660);
+delayMicroseconds(500); pulseiR(660);
+delayMicroseconds(500); pulseiR(620);
+delayMicroseconds(520); pulseiR(660);
+delayMicroseconds(500); pulseiR(660);
+delayMicroseconds(1640); pulseiR(660);
+delayMicroseconds(1660); pulseiR(640);
+delayMicroseconds(1660); pulseiR(660);
+delayMicroseconds(1660); pulseiR(640);
+delayMicroseconds(1680); pulseiR(620);
+delayMicroseconds(1680); pulseiR(660);
+delayMicroseconds(1640); pulseiR(660);
+delayMicroseconds(1660); pulseiR(640);
+delayMicroseconds(500); pulseiR(660);
+delayMicroseconds(1680); pulseiR(620);
+delayMicroseconds(520); pulseiR(640);
+delayMicroseconds(520); pulseiR(640);
+delayMicroseconds(1660); pulseiR(660);
+delayMicroseconds(500); pulseiR(660);
+delayMicroseconds(500); pulseiR(640);
+delayMicroseconds(500); pulseiR(660);
+delayMicroseconds(1660); pulseiR(640);
+delayMicroseconds(500); pulseiR(660);
+delayMicroseconds(1660); pulseiR(640);
+delayMicroseconds(1680); pulseiR(640);
+delayMicroseconds(500); pulseiR(640);
+delayMicroseconds(1660); pulseiR(660);
+delayMicroseconds(1660); pulseiR(640);
+delayMicroseconds(1680); pulseiR(640);
+delayMicroseconds(40980); pulseiR(9340);
+delayMicroseconds(2220); pulseiR(660);
+delayMicroseconds(33284); pulseiR(9320);
+delayMicroseconds(2240); pulseiR(660);
+
+
+}
+
+
+void Channel1() {
+  delayMicroseconds(13428); pulseiR(9360);
+  delayMicroseconds(4520); pulseiR(640);
+  delayMicroseconds(540); pulseiR(660);
+  delayMicroseconds(500); pulseiR(600);
+  delayMicroseconds(540); pulseiR(640);
+  delayMicroseconds(520); pulseiR(660);
+  delayMicroseconds(500); pulseiR(640);
+  delayMicroseconds(500); pulseiR(660);
+  delayMicroseconds(500); pulseiR(660);
+  delayMicroseconds(500); pulseiR(600);
+  delayMicroseconds(1700); pulseiR(660);
+  delayMicroseconds(1640); pulseiR(640);
+  delayMicroseconds(1700); pulseiR(600);
+  delayMicroseconds(1700); pulseiR(660);
+  delayMicroseconds(1640); pulseiR(620);
+  delayMicroseconds(1700); pulseiR(600);
+  delayMicroseconds(1700); pulseiR(660);
+  delayMicroseconds(1640); pulseiR(640);
+  delayMicroseconds(1700); pulseiR(600);
+  delayMicroseconds(540); pulseiR(620);
+  delayMicroseconds(540); pulseiR(660);
+  delayMicroseconds(1640); pulseiR(620);
+  delayMicroseconds(540); pulseiR(660);
+  delayMicroseconds(500); pulseiR(600);
+  delayMicroseconds(540); pulseiR(620);
+  delayMicroseconds(540); pulseiR(660);
+  delayMicroseconds(500); pulseiR(600);
+  delayMicroseconds(1700); pulseiR(660);
+  delayMicroseconds(1640); pulseiR(640);
+  delayMicroseconds(520); pulseiR(660);
+  delayMicroseconds(1640); pulseiR(640);
+  delayMicroseconds(1700); pulseiR(600);
+  delayMicroseconds(1700); pulseiR(660);
+  delayMicroseconds(1640); pulseiR(660);
+  delayMicroseconds(40960); pulseiR(9320);
+  delayMicroseconds(2280); pulseiR(660);
+}
+
+
+void Channel2() {
+  
+delayMicroseconds(60624); pulseiR(9320);
+delayMicroseconds(4580); pulseiR(620);
+delayMicroseconds(540); pulseiR(660);
+delayMicroseconds(500); pulseiR(600);
+delayMicroseconds(540); pulseiR(620);
+delayMicroseconds(540); pulseiR(660);
+delayMicroseconds(500); pulseiR(600);
+delayMicroseconds(540); pulseiR(640);
+delayMicroseconds(520); pulseiR(660);
+delayMicroseconds(500); pulseiR(600);
+delayMicroseconds(1700); pulseiR(660);
+delayMicroseconds(1640); pulseiR(640);
+delayMicroseconds(1700); pulseiR(600);
+delayMicroseconds(1700); pulseiR(660);
+delayMicroseconds(1640); pulseiR(620);
+delayMicroseconds(1700); pulseiR(600);
+delayMicroseconds(1700); pulseiR(660);
+delayMicroseconds(1640); pulseiR(640);
+delayMicroseconds(1700); pulseiR(600);
+delayMicroseconds(540); pulseiR(620);
+delayMicroseconds(1700); pulseiR(600);
+delayMicroseconds(1700); pulseiR(660);
+delayMicroseconds(1640); pulseiR(640);
+delayMicroseconds(520); pulseiR(660);
+delayMicroseconds(500); pulseiR(620);
+delayMicroseconds(520); pulseiR(640);
+delayMicroseconds(520); pulseiR(660);
+delayMicroseconds(1640); pulseiR(640);
+delayMicroseconds(520); pulseiR(660);
+delayMicroseconds(520); pulseiR(600);
+delayMicroseconds(520); pulseiR(640);
+delayMicroseconds(1700); pulseiR(600);
+delayMicroseconds(1700); pulseiR(660);
+delayMicroseconds(1640); pulseiR(620);
+delayMicroseconds(41000); pulseiR(9360);
+delayMicroseconds(2240); pulseiR(640);
+}
+
+
+void Channel3() {
+  delayMicroseconds(18552); pulseiR(9340);
+  delayMicroseconds(4540); pulseiR(660);
+  delayMicroseconds(500); pulseiR(660);
+  delayMicroseconds(500); pulseiR(660);
+  delayMicroseconds(500); pulseiR(620);
+  delayMicroseconds(520); pulseiR(660);
+  delayMicroseconds(500); pulseiR(660);
+  delayMicroseconds(500); pulseiR(640);
+  delayMicroseconds(500); pulseiR(660);
+  delayMicroseconds(500); pulseiR(660);
+  delayMicroseconds(1640); pulseiR(660);
+  delayMicroseconds(1660); pulseiR(640);
+  delayMicroseconds(1680); pulseiR(640);
+  delayMicroseconds(1660); pulseiR(640);
+  delayMicroseconds(1680); pulseiR(640);
+  delayMicroseconds(1660); pulseiR(660);
+  delayMicroseconds(1640); pulseiR(660);
+  delayMicroseconds(1680); pulseiR(620);
+  delayMicroseconds(1680); pulseiR(640);
+  delayMicroseconds(1660); pulseiR(660);
+  delayMicroseconds(1660); pulseiR(640);
+  delayMicroseconds(1660); pulseiR(660);
+  delayMicroseconds(1640); pulseiR(660);
+  delayMicroseconds(500); pulseiR(660);
+  delayMicroseconds(520); pulseiR(620);
+  delayMicroseconds(500); pulseiR(660);
+  delayMicroseconds(520); pulseiR(640);
+  delayMicroseconds(520); pulseiR(620);
+  delayMicroseconds(500); pulseiR(660);
+  delayMicroseconds(500); pulseiR(660);
+  delayMicroseconds(500); pulseiR(640);
+  delayMicroseconds(1680); pulseiR(640);
+  delayMicroseconds(1660); pulseiR(660);
+  delayMicroseconds(1660); pulseiR(640);
+  delayMicroseconds(40980); pulseiR(9320);
+  delayMicroseconds(2240); pulseiR(680);
+}
+
+
+void Channel4() {
+
+delayMicroseconds(59928); pulseiR(9340);
+delayMicroseconds(4540); pulseiR(660);
+delayMicroseconds(520); pulseiR(640);
+delayMicroseconds(500); pulseiR(660);
+delayMicroseconds(500); pulseiR(640);
+delayMicroseconds(520); pulseiR(640);
+delayMicroseconds(500); pulseiR(660);
+delayMicroseconds(500); pulseiR(640);
+delayMicroseconds(540); pulseiR(620);
+delayMicroseconds(500); pulseiR(660);
+delayMicroseconds(1680); pulseiR(620);
+delayMicroseconds(1680); pulseiR(620);
+delayMicroseconds(1680); pulseiR(660);
+delayMicroseconds(1660); pulseiR(620);
+delayMicroseconds(1680); pulseiR(640);
+delayMicroseconds(1680); pulseiR(640);
+delayMicroseconds(1680); pulseiR(620);
+delayMicroseconds(1680); pulseiR(620);
+delayMicroseconds(1680); pulseiR(660);
+delayMicroseconds(500); pulseiR(620);
+delayMicroseconds(1680); pulseiR(660);
+delayMicroseconds(1660); pulseiR(640);
+delayMicroseconds(500); pulseiR(660);
+delayMicroseconds(500); pulseiR(640);
+delayMicroseconds(540); pulseiR(620);
+delayMicroseconds(500); pulseiR(660);
+delayMicroseconds(500); pulseiR(640);
+delayMicroseconds(1680); pulseiR(640);
+delayMicroseconds(520); pulseiR(620);
+delayMicroseconds(540); pulseiR(620);
+delayMicroseconds(1680); pulseiR(620);
+delayMicroseconds(1680); pulseiR(660);
+delayMicroseconds(1660); pulseiR(640);
+delayMicroseconds(1660); pulseiR(640);
+delayMicroseconds(40980); pulseiR(9340);
+delayMicroseconds(2260); pulseiR(620);
+
+
+}
+
+
+void Channel5() {
+  delayMicroseconds(2228); pulseiR(9340);
+  delayMicroseconds(4560); pulseiR(640);
+  delayMicroseconds(520); pulseiR(600);
+  delayMicroseconds(540); pulseiR(640);
+  delayMicroseconds(520); pulseiR(640);
+  delayMicroseconds(520); pulseiR(600);
+  delayMicroseconds(540); pulseiR(640);
+  delayMicroseconds(520); pulseiR(640);
+  delayMicroseconds(520); pulseiR(620);
+  delayMicroseconds(520); pulseiR(620);
+  delayMicroseconds(1720); pulseiR(600);
+  delayMicroseconds(1700); pulseiR(620);
+  delayMicroseconds(1680); pulseiR(620);
+  delayMicroseconds(1700); pulseiR(600);
+  delayMicroseconds(1700); pulseiR(640);
+  delayMicroseconds(1660); pulseiR(640);
+  delayMicroseconds(1700); pulseiR(600);
+  delayMicroseconds(1700); pulseiR(620);
+  delayMicroseconds(1680); pulseiR(660);
+  delayMicroseconds(500); pulseiR(620);
+  delayMicroseconds(540); pulseiR(600);
+  delayMicroseconds(1700); pulseiR(620);
+  delayMicroseconds(1680); pulseiR(660);
+  delayMicroseconds(500); pulseiR(640);
+  delayMicroseconds(540); pulseiR(620);
+  delayMicroseconds(500); pulseiR(660);
+  delayMicroseconds(500); pulseiR(640);
+  delayMicroseconds(1660); pulseiR(660);
+  delayMicroseconds(1680); pulseiR(620);
+  delayMicroseconds(520); pulseiR(640);
+  delayMicroseconds(520); pulseiR(620);
+  delayMicroseconds(1680); pulseiR(660);
+  delayMicroseconds(1660); pulseiR(640);
+  delayMicroseconds(1660); pulseiR(640);
+  delayMicroseconds(40980); pulseiR(9340);
+  delayMicroseconds(2260); pulseiR(660);
+}
+
+
+void Channel6() {
+delayMicroseconds(39768); pulseiR(9360);
+delayMicroseconds(4540); pulseiR(660);
+delayMicroseconds(520); pulseiR(620);
+delayMicroseconds(500); pulseiR(660);
+delayMicroseconds(520); pulseiR(640);
+delayMicroseconds(500); pulseiR(620);
+delayMicroseconds(520); pulseiR(660);
+delayMicroseconds(500); pulseiR(660);
+delayMicroseconds(520); pulseiR(620);
+delayMicroseconds(500); pulseiR(640);
+delayMicroseconds(1700); pulseiR(600);
+delayMicroseconds(1700); pulseiR(660);
+delayMicroseconds(1640); pulseiR(640);
+delayMicroseconds(1680); pulseiR(620);
+delayMicroseconds(1680); pulseiR(660);
+delayMicroseconds(1660); pulseiR(620);
+delayMicroseconds(1700); pulseiR(600);
+delayMicroseconds(1700); pulseiR(660);
+delayMicroseconds(1640); pulseiR(640);
+delayMicroseconds(1680); pulseiR(620);
+delayMicroseconds(520); pulseiR(640);
+delayMicroseconds(1700); pulseiR(600);
+delayMicroseconds(1700); pulseiR(660);
+delayMicroseconds(500); pulseiR(600);
+delayMicroseconds(540); pulseiR(620);
+delayMicroseconds(540); pulseiR(660);
+delayMicroseconds(500); pulseiR(600);
+delayMicroseconds(540); pulseiR(620);
+delayMicroseconds(1700); pulseiR(600);
+delayMicroseconds(540); pulseiR(620);
+delayMicroseconds(540); pulseiR(660);
+delayMicroseconds(1640); pulseiR(640);
+delayMicroseconds(1680); pulseiR(620);
+delayMicroseconds(1700); pulseiR(660);
+delayMicroseconds(40940); pulseiR(9360);
+delayMicroseconds(2240); pulseiR(600);
+
+
+
+
+}
+
+
+void Channel7() {
+  delayMicroseconds(43532); pulseiR(9320);
+  delayMicroseconds(4560); pulseiR(640);
+  delayMicroseconds(540); pulseiR(600);
+  delayMicroseconds(540); pulseiR(620);
+  delayMicroseconds(540); pulseiR(620);
+  delayMicroseconds(540); pulseiR(600);
+  delayMicroseconds(540); pulseiR(620);
+  delayMicroseconds(540); pulseiR(620);
+  delayMicroseconds(540); pulseiR(600);
+  delayMicroseconds(540); pulseiR(620);
+  delayMicroseconds(1700); pulseiR(600);
+  delayMicroseconds(1700); pulseiR(640);
+  delayMicroseconds(1660); pulseiR(640);
+  delayMicroseconds(1700); pulseiR(600);
+  delayMicroseconds(1700); pulseiR(620);
+  delayMicroseconds(1680); pulseiR(620);
+  delayMicroseconds(1700); pulseiR(600);
+  delayMicroseconds(1700); pulseiR(640);
+  delayMicroseconds(1660); pulseiR(640);
+  delayMicroseconds(540); pulseiR(620);
+  delayMicroseconds(540); pulseiR(600);
+  delayMicroseconds(540); pulseiR(620);
+  delayMicroseconds(1700); pulseiR(600);
+  delayMicroseconds(540); pulseiR(620);
+  delayMicroseconds(540); pulseiR(620);
+  delayMicroseconds(540); pulseiR(600);
+  delayMicroseconds(540); pulseiR(620);
+  delayMicroseconds(1700); pulseiR(600);
+  delayMicroseconds(1700); pulseiR(640);
+  delayMicroseconds(1660); pulseiR(640);
+  delayMicroseconds(540); pulseiR(620);
+  delayMicroseconds(1660); pulseiR(640);
+  delayMicroseconds(1700); pulseiR(600);
+  delayMicroseconds(1700); pulseiR(620);
+  delayMicroseconds(41000); pulseiR(9360);
+  delayMicroseconds(2220); pulseiR(620);
+}
+
+
+void Channel8() {
+  delayMicroseconds(47416); pulseiR(9320);
+  delayMicroseconds(4560); pulseiR(640);
+  delayMicroseconds(540); pulseiR(660);
+  delayMicroseconds(500); pulseiR(600);
+  delayMicroseconds(540); pulseiR(620);
+  delayMicroseconds(540); pulseiR(660);
+  delayMicroseconds(500); pulseiR(600);
+  delayMicroseconds(540); pulseiR(640);
+  delayMicroseconds(520); pulseiR(660);
+  delayMicroseconds(500); pulseiR(600);
+  delayMicroseconds(1700); pulseiR(660);
+  delayMicroseconds(1660); pulseiR(620);
+  delayMicroseconds(1700); pulseiR(600);
+  delayMicroseconds(1700); pulseiR(660);
+  delayMicroseconds(1640); pulseiR(620);
+  delayMicroseconds(1700); pulseiR(600);
+  delayMicroseconds(1720); pulseiR(640);
+  delayMicroseconds(1640); pulseiR(640);
+  delayMicroseconds(1700); pulseiR(600);
+  delayMicroseconds(540); pulseiR(620);
+  delayMicroseconds(1700); pulseiR(600);
+  delayMicroseconds(540); pulseiR(620);
+  delayMicroseconds(1700); pulseiR(600);
+  delayMicroseconds(540); pulseiR(640);
+  delayMicroseconds(520); pulseiR(660);
+  delayMicroseconds(500); pulseiR(620);
+  delayMicroseconds(520); pulseiR(640);
+  delayMicroseconds(1680); pulseiR(620);
+  delayMicroseconds(520); pulseiR(640);
+  delayMicroseconds(1700); pulseiR(600);
+  delayMicroseconds(540); pulseiR(620);
+  delayMicroseconds(1700); pulseiR(600);
+  delayMicroseconds(1700); pulseiR(660);
+  delayMicroseconds(1640); pulseiR(620);
+  delayMicroseconds(41000); pulseiR(9360);
+  delayMicroseconds(2240); pulseiR(660);
+}
+
+
+void Channel9() {
+  
+
+
+delayMicroseconds(18308); pulseiR(9340);
+delayMicroseconds(4540); pulseiR(660);
+delayMicroseconds(520); pulseiR(640);
+delayMicroseconds(520); pulseiR(620);
+delayMicroseconds(540); pulseiR(620);
+delayMicroseconds(520); pulseiR(640);
+delayMicroseconds(520); pulseiR(620);
+delayMicroseconds(540); pulseiR(620);
+delayMicroseconds(520); pulseiR(640);
+delayMicroseconds(520); pulseiR(620);
+delayMicroseconds(1680); pulseiR(660);
+delayMicroseconds(1660); pulseiR(620);
+delayMicroseconds(1680); pulseiR(640);
+delayMicroseconds(1680); pulseiR(640);
+delayMicroseconds(1680); pulseiR(620);
+delayMicroseconds(1680); pulseiR(620);
+delayMicroseconds(1680); pulseiR(640);
+delayMicroseconds(1680); pulseiR(620);
+delayMicroseconds(1680); pulseiR(640);
+delayMicroseconds(1680); pulseiR(620);
+delayMicroseconds(1700); pulseiR(600);
+delayMicroseconds(540); pulseiR(620);
+delayMicroseconds(1700); pulseiR(600);
+delayMicroseconds(540); pulseiR(620);
+delayMicroseconds(540); pulseiR(620);
+delayMicroseconds(540); pulseiR(600);
+delayMicroseconds(540); pulseiR(620);
+delayMicroseconds(540); pulseiR(620);
+delayMicroseconds(540); pulseiR(600);
+delayMicroseconds(1700); pulseiR(640);
+delayMicroseconds(520); pulseiR(620);
+delayMicroseconds(1680); pulseiR(640);
+delayMicroseconds(1680); pulseiR(620);
+delayMicroseconds(1700); pulseiR(600);
+delayMicroseconds(41020); pulseiR(9300);
+delayMicroseconds(2260); pulseiR(640);
+delayMicroseconds(33304); pulseiR(9300);
+delayMicroseconds(2260); pulseiR(640);
+
+
+}
+
+
+/////////////////////////////////////////////////////////////////////////TV/////////////////////////////////////////////////////////////////////////////
 void receiveData(int byteCount) {
   int i = 0;
   while (Wire.available()) {
@@ -1207,14 +1956,17 @@ void receiveData(int byteCount) {
   //Serial.print("dffdfd");
 
 }
+
+
 void sendData() {
   Wire.write(temperature);
 }
+
 
 void ReadTempOuter() {
   val = analogRead(tempPin);
   float mv = ( val / 1024.0) * 5000;
   temperature = mv / 10;
   /*Serial.println(temperature); //For Debugging
-  delay(1000); //For Debugging*/
+    delay(1000); //For Debugging*/
 }
